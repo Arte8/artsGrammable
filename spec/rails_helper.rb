@@ -33,7 +33,7 @@ end
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.include Devise::Test::ControllerHelpers, type: :controller
-  config.include Devise::Test::ControllerHelpers, type: :view 
+  #config.include Devise::Test::ControllerHelpers, type: :view 
   include ActionDispatch::TestProcess
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your

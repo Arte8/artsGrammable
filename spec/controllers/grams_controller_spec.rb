@@ -141,7 +141,7 @@ RSpec.describe GramsController, type: :controller do
       post :create, params: {
       gram: {
       message: 'Hello!',
-      picture: fixture_file_upload("/picture.png")
+      picture: fixture_file_upload("/picture.png", 'image/png')
     }
   }
 
