@@ -81,3 +81,4 @@ gem 'devise'
 
 gem 'carrierwave', '~> 1.0'
 
+

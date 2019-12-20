@@ -7,7 +7,7 @@ RSpec.describe GramsController, type: :controller do
       delete :destroy, params: { id: gram.id }
       expect(response).to redirect_to new_user_session_path
     end
-    
+
     it "should allow a user to destroy grams" do
       gram = FactoryBot.create(:gram)
       sign_in gram.user
@@ -74,8 +74,8 @@ RSpec.describe GramsController, type: :controller do
 
     it "should return a 404 error message if the gram is not found" do
       gram = FactoryBot.create(:gram)
-      sign_in gram.user    
-      get :edit, params: { id: 'SWAG' }
+      sign_in gram.user
+      get :show, params: { id: 'SWAG' }
       expect(response).to have_http_status(:not_found)
     end
   end
@@ -85,7 +85,7 @@ RSpec.describe GramsController, type: :controller do
       gram = FactoryBot.create(:gram)
       sign_in gram.user
 
-      get :edit, params: { id: gram.id }
+      get :show, params: { id: gram.id }
       expect(response).to have_http_status(:success)
     end
 
@@ -138,13 +138,13 @@ RSpec.describe GramsController, type: :controller do
       user = FactoryBot.create(:user)
       sign_in user
 
-      post :create, params: { gram: { message: 'Hello!', 
+      post :create, params: { gram: { message: 'Hello!',
       #picture: fixture_file_upload("/picture.png", 'image/png')
       picture: fixture_file_upload("/picture.png", 'image/png' )
       # picture: fixture_file_upload("files/picture.png", 'image/png')
     }
   }
-    
+
 
       # post :create, params: { gram: { message: 'Hello!' } }
       expect(response).to redirect_to root_path
